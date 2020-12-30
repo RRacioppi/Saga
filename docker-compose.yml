@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+  order-service:
+    image: maven:3.6-openjdk-8
+    ports:
+      - "8080"
+    volumes:
+      - './OrderService:/usr/src/mavenapp'
+      - ${HOME}/.m2/repository:/root/.m2/repository
+    working_dir: /usr/src/mavenapp
+    command: "bash -c 'mvn clean package && java -jar target/*jar'"

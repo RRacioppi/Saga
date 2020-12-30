@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.example.saga</groupId>
 	<artifactId>orderservice</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>orderservice</name>
 	<description>Saga Component using Spring WebApp with swagger codegen...</description>
 
