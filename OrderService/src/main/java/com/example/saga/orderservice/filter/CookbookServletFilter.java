@@ -18,7 +18,7 @@ import java.util.UUID;
 @Component
 @Order(1)
 public class CookbookServletFilter implements Filter {
-    public static final String CORRELATION_ID_HEADER_NAME = "X-UNIPOL-REQUESTID";
+    public static final String CORRELATION_ID_HEADER_NAME = "REQUESTID";
     public static final String CORRELATION_ID_LOG_VAR_NAME = "requestId";
 
     @Autowired
