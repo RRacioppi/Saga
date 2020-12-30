@@ -104,6 +104,51 @@ paths:
           schema:
             $ref: '#/definitions/Error'
   /orders/{id}:
+    get:
+      tags:
+        - order
+      summary: Queries specific Order
+      description: 'Queries specific Order'
+      operationId: getOrder
+      parameters:
+        - in: path
+          name: id
+          description: orderId
+          required: true
+          type: integer
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Order'
+        '400':
+          description: Invalid Order
+          schema:
+            $ref: '#/definitions/Error'
+        '401':
+          description: Invalid Order
+          schema:
+            $ref: '#/definitions/Error'
+        '403':
+          description: Invalid Order
+          schema:
+            $ref: '#/definitions/Error'
+        '404':
+          description: Invalid Order
+          schema:
+            $ref: '#/definitions/Error'
+        '412':
+          description: Invalid Order
+          schema:
+            $ref: '#/definitions/Error'
+        '500':
+          description: Invalid Order
+          schema:
+            $ref: '#/definitions/Error'
+        '503':
+          description: Invalid Order
+          schema:
+            $ref: '#/definitions/Error'
     put:
       tags:
         - order
