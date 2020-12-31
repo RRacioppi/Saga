@@ -9,7 +9,8 @@ import java.util.List;
 public interface OrderDao {
     @Insert("INSERT INTO ORDERSERVICE.ORDERS (STATUS,COMPLETE,QUANTITY,SHIPDATE) " +
             "VALUES(#{status},#{complete},#{quantity},#{shipDate})")
-    public void createOrder(Order Order);
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    public Long createOrder(Order Order);
 
     @Select({"SELECT * FROM ORDERSERVICE.ORDERS"})
     public List<Order> getAllOrders();
