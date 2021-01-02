@@ -11,8 +11,11 @@ public interface OrderSagaDao {
     @Insert("INSERT INTO ORDERSERVICE.ORDERSAGAS (ORDER_ID,STATUS) " +
             "VALUES(#{orderId},#{status})")
     @Options(useGeneratedKeys = true, keyProperty = "id")
-    public void createSaga(OrderSaga OrderSaga);
+    public Long createSaga(OrderSaga OrderSaga);
 
     @Select({"SELECT ID, ORDER_ID as ORDERID, STATUS FROM ORDERSERVICE.ORDERSAGAS"})
     public List<OrderSaga> getAllSaga();
+
+    @Select({"UPDATE ORDERSERVICE.ORDERSAGAS SET STATUS = #{status} WHERE ID = #{id};"})
+    void updateSaga(OrderSaga orderSaga);
 }
